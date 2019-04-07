@@ -2,7 +2,7 @@ $(function() {
     ('#shopping-list-entry').on('submit', function(e) {
     e.preventDefault();
     var text = $('#shopping-list-entry').val();
-    ('#shopping-item').append(`<li>
+    ('.shopping-item').append(`<li>
     <span class="shopping-item">${text}</span>
     <div class="shopping-item-controls">
       <button class="shopping-item-toggle">

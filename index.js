@@ -18,8 +18,14 @@ $(function() {
 
 )});
 
-$(function() {
+$('.shopping-list').on('click', '.shopping-item-toggle', function(e) {
+    $(this).closest('<li>').find('.shopping-item').toggle('.shopping-item');
 
 }
+)
 
-);
+$('.shopping-list').on('click', '.shopping-item-delete', function(e) {
+    $(this).closest('<li>').find('.shopping-item').remove('.shopping-item');
+
+}
+)

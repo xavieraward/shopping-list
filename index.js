@@ -1,5 +1,6 @@
 $(function() {
     ('#shopping-list-entry').on('submit', function(e) {
+    e.preventDefault();
     var text = $('#shopping-list-entry').val();
     ('#shopping-item').append(`<li>
     <span class="shopping-item">${text}</span>
@@ -12,19 +13,13 @@ $(function() {
       </button>
     </div>
   </li>`);
-    e.preventDefault();
+   
 }
 
 )});
 
-function removeItem() {
+$(function() {
 
 }
 
-function checkItem() {
-
-}
-
-function uncheckItem() {
-
-}
+);

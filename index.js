@@ -1,9 +1,9 @@
 $(function() {
-    $('#js-shopping-list-form').submit(function(e) {
-    e.preventDefault();
+    $('#js-shopping-list-form').submit(function(event) {
+    event.preventDefault();
 
-    const listItem = $('.js-shopping-list-entry').val();
-
+    const listItem = $('#shopping-list-entry').val();
+    
     $('#shopping-list-entry').val('');
 
     $('.shopping-list').append(`<li>
@@ -17,17 +17,12 @@ $(function() {
       </button>
     </div>
   </li>`);
+}); });
+
+$('.shopping-list').on('click', '.shopping-item-toggle', function(event) {
+    $(this).closest('li').find('.shopping-item').toggleClass('.shopping item shopping-item__checked');
 });
 
-$('.shopping-list').on('click', '.shopping-item-toggle', function(e) {
-    $(this).closest('li').find('.shopping-item').toggleClass('.shopping-item__checked');
-
-}
-);
-
-$('.shopping-list').on('click', '.shopping-item-delete', function(e) {
-    $(this).closest('li').find('.shopping-item').remove();
-
-})
-
+$('.shopping-list').on('click', '.shopping-item-delete', function(event) {
+    $(this).closest('li').remove();
 });
